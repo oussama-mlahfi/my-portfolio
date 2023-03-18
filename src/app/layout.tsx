@@ -2,7 +2,7 @@ import AppFooter from "@/component/shared/AppFooter";
 import AppHeader from "@/component/shared/AppHeader";
 import Container from "@/component/shared/Container";
 import NavBar from "@/component/shared/NavBar";
-import "./globals.css";
+import "../globals.css";
 
 export const metadata = {
   title: "Create Next App",

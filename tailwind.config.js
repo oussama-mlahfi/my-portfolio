@@ -7,7 +7,11 @@ module.exports = {
     // Or if using `src` directory:
     "./src/**/*.{js,ts,jsx,tsx}",],
   theme: {
+    fontFamily: {
+      tags: ['Space Mono', 'monospace'],
+    },
     extend: {
+     
       keyframes: {
         "accordion-down": {
           from: { height: 0 },
@@ -25,5 +29,11 @@ module.exports = {
     
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"),
+  function ({ addBase }) {
+    addBase({
+      "@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@1,700&display=swap');": {},
+    });
+  },
+],
 }
