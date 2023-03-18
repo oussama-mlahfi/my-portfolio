@@ -1,6 +1,7 @@
 import AppFooter from "@/component/shared/AppFooter";
 import AppHeader from "@/component/shared/AppHeader";
 import Container from "@/component/shared/Container";
+import NavBar from "@/component/shared/NavBar";
 import "./globals.css";
 
 export const metadata = {
@@ -16,6 +17,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="grid grid-cols-10">
+        <div className=" col-span-10">
+          <NavBar />
+        </div>
         <div className=" col-span-2 ">
           <AppHeader />
         </div>
