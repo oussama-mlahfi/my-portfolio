@@ -7,8 +7,8 @@ export default function Home() {
       <div className="h-screen">
         <HeroSection />
       </div>
-      <div>
-        <AboutMe />
+      <div className="" id="aboutMe">
+        <AboutMe display={true} />
       </div>
     </main>
   );

@@ -3,37 +3,65 @@ import useIntersectionObserver from "@/lib/use-observer";
 import React, { useEffect, useRef, useState } from "react";
 import MyImage from "../shared/MyImage";
 
-export interface AboutMeProps {}
-const AboutMe: React.FC<AboutMeProps> = () => {
+export interface AboutMeProps {
+  display: boolean;
+}
+const AboutMe: React.FC<AboutMeProps> = (display) => {
   const ref = useRef<HTMLDivElement | null>(null);
   const entry = useIntersectionObserver(ref, {});
   const isVisible = !!entry?.isIntersecting;
 
   console.log(`Render Section `, { isVisible });
+
+  if (!display) {
+    return null;
+  }
+
   return (
     <div
-      className="flex flex-row justify-between items-center overflow-hidden"
+      className="grid grid-cols-2 justify-between items-center"
       ref={ref}
+      id="aboutMe"
     >
-      <div className={` ${isVisible ? "animate-slide-in-left" : ""}`}>
-        {" "}
+      <div
+        className={`flex col-span-1 ${
+          isVisible ? "animate-slide-in-left" : ""
+        }`}
+      >
         <MyImage
           src="/imgs/profile-placeholder.jpg"
-          width={300}
+          width={380}
           height={500}
           alt="profile picture"
           className="rounded-full"
         />
       </div>
-      <div className={` ${isVisible ? "animate-slide-in-right" : ""}`}>
-        <h2 className="text-2xl font-bold">What I DO</h2>
-        <p className="font-thin py-5">
+      <div
+        className={` col-span-1 ${isVisible ? "animate-slide-in-right" : ""}`}
+      >
+        <h2 className="text-4xl font-bold">What I DO</h2>
+        <p className="font-thin text-2xl py-5">
           CRAZY FULL STACK DEVELOPER WHO WANTS TO EXPLORE EVERY TECH STACK
         </p>
-        <div className="flex flex-row items-center space-x-4">
+        <div className="grid grid-cols-6 gap-2 gap-x-5 justify-center items-center space-x-4">
           {expertise.map((item, i) => (
             <Expertise src={item.icon} key={i} title={item.name} />
           ))}
+        </div>
+        <div className="pt-5">
+          <ul className="">
+            <li>
+              ⚡ Develop highly interactive Front end / User Interfaces for your
+              web and mobile applications
+            </li>
+            <li>
+              ⚡ Progressive Web Applications ( PWA ) in normal and SPA Stacks
+            </li>
+            <li>
+              ⚡ Integration of third party services such as Firebase/ AWS /
+              Strapi
+            </li>
+          </ul>
         </div>
       </div>
     </div>
@@ -67,5 +95,9 @@ const expertise = [
   { name: "npm", icon: "/logos/npm.svg" },
   { name: "react", icon: "/logos/react.svg" },
   { name: "tailwindcss", icon: "/logos/tailwindcss.svg" },
+  { name: "typescript", icon: "/logos/typescript.svg" },
+  { name: "typescript", icon: "/logos/typescript.svg" },
+  { name: "typescript", icon: "/logos/typescript.svg" },
+  { name: "typescript", icon: "/logos/typescript.svg" },
   { name: "typescript", icon: "/logos/typescript.svg" },
 ];

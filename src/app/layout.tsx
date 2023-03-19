@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="flex flex-col">
-        <div className="  ">
+        <div className=" sticky top-0 z-10 ">
           <AppHeader />
         </div>
         <div className="">{children}</div>
