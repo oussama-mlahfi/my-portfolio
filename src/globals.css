@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.text-gradient {
+  @apply text-transparent bg-clip-text bg-gradient-to-r from-blue-800 via-[#C616AE] to-[#C616AE] font-black;
+}
+
 /* :root {
   --max-width: 1100px;
   --border-radius: 12px;

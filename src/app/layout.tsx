@@ -16,16 +16,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="grid grid-cols-10">
-        <div className=" col-span-10">
-          <NavBar />
-        </div>
-        <div className=" col-span-2 ">
+      <body className="flex flex-col">
+        <div className="  ">
           <AppHeader />
         </div>
-        <div className=" col-span-8">
-          <Container>{children}</Container>
-        </div>
+        <div className="">{children}</div>
         {/* <AppFooter /> */}
       </body>
     </html>

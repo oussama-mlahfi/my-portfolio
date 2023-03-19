@@ -17,7 +17,7 @@ const TypingAnimation: React.FC<TypingAnimationProps> = ({
     <Typed
       strings={[text]}
       showCursor={false}
-      typeSpeed={100}
+      typeSpeed={50}
       backSpeed={50}
       startDelay={delay}
       style={{ textAlign: "center" }}

@@ -10,31 +10,16 @@ import {
 export interface AppHeaderProps {}
 const AppHeader: React.FC<AppHeaderProps> = () => {
   return (
-    <header>
-      <nav className="">
+    <header className="bg-slate-900 py-4 ">
+      <nav className=" flex flex-row justify-between text-white max-w-5xl mx-auto  ">
         <div>
-          <Accordion type="single" collapsible>
-            <AccordionItem value="item-1">
-              <AccordionTrigger>Is it accessible?</AccordionTrigger>
-              <AccordionContent>
-                Yes. It adheres to the WAI-ARIA design pattern.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-2">
-              <AccordionTrigger>Is it styled?</AccordionTrigger>
-              <AccordionContent>
-                Yes. It comes with default styles that matches the other
-                components aesthetic.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-3">
-              <AccordionTrigger>Is it animated?</AccordionTrigger>
-              <AccordionContent>
-                Yes. Its animated by default, but you can disable it if you
-                prefer.
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
+          <span>Home</span>
+        </div>
+        <div className=" flex flex-row space-x-5">
+          <span>Jobs</span>
+          <span>About Me</span>
+          <span>Blog</span>
+          <span>Contact</span>
         </div>
       </nav>
     </header>
